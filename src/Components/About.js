@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import about from "../images/about.jpeg";
 import { Title } from "./Title";
 import { aboutData } from "../utils/data";

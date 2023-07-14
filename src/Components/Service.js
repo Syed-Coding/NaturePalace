@@ -1,6 +1,8 @@
 import React from "react";
 import { servicesData } from "../utils/data";
 const Service = () => {
+  // console.log("rernder  s component");
+
   return (
     <div className="section-center services-center">
       {servicesData.map(({ id, icon, text, title }) => {

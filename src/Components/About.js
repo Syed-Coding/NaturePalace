@@ -2,23 +2,25 @@ import React, { useMemo, useState } from "react";
 import about from "../images/about.jpeg";
 import { Title } from "./Title";
 import { aboutData } from "../utils/data";
-
+// console.log("rernder before component");
 const About = () => {
   const [readmore, setReadMore] = useState(false);
-
+  const [abouttext, setAboutText] = useState(aboutData);
+  // console.log("rernder insde component");
   // const data = aboutData.map((data) => {
   //   console.log("inside about");
   //   return data.text;
   // });
   //if we log log above commneted data we can see that whenever the change the state , it logs 'inside about' , this can prevrent by usememo
-  const data = useMemo(() => {
-    return aboutData.map((data) => {
-      // console.log("inside about");
-      return data.text;
-    });
-  }, []);
+  // const data = useMemo(() => {
+  //   return aboutData.map((data) => {
+  // console.log("inside about");
+  //     return data.text;
+  //   });
+  // }, []);
 
-  const [firstData] = data;
+  const [firstObject] = abouttext;
+  const firsttext = firstObject.text;
 
   return (
     <section className="section" id="about">
@@ -30,8 +32,8 @@ const About = () => {
         </div>
         <article className="about-info">
           <h3>explore the difference</h3>
-          {!readmore && <p>{firstData}</p>}
-          {readmore && data.map((ele, i) => <p key={i}>{ele}</p>)}
+          {!readmore && <p>{firsttext}</p>}
+          {readmore && abouttext.map(({ id, text }) => <p key={id}>{text}</p>)}
 
           <button onClick={() => setReadMore(!readmore)} className="btn">
             {readmore ? "read less" : "read more"}

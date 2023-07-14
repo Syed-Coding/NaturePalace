@@ -5,6 +5,8 @@ import NavLinks from "./NavLinks";
 import { MediaLinks } from "./MediaLinks";
 
 const Nav = () => {
+  // console.log("rernder n  component");
+
   return (
     <nav className="navbar">
       <div className="nav-center">
